@@ -14,12 +14,14 @@ function ChatInput({
   const handleClick = async () => {
     onSendMessage({ id: Date.now(), sender: "user", message });
     setMessage("");
+    setIsLoading(true);
     try {
       const res = await fetch(`${BASE_URL}/api/dream`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        mode: "no-cors",
         body: JSON.stringify({ dream: message }),
       });
       const data = await res.json();
@@ -49,7 +51,7 @@ function ChatInput({
         ></textarea>
         <div className="flex justify-end">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 disabled:bg-gray-400 disabled:text-gray-900 text-white font-bold py-2 px-4 rounded"
             onClick={handleClick}
             disabled={isLoading}
           >
