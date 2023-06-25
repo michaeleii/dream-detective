@@ -24,6 +24,7 @@ function ChatInput({
         body: JSON.stringify({ dream: message }),
       });
       const data = await res.json();
+      console.log(data);
       onSendMessage({
         id: Date.now(),
         sender: "ai",
