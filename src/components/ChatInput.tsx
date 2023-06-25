@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Message } from "../App";
 
 const BASE_URL = "https://dream-detective.onrender.com";
@@ -38,7 +38,7 @@ function ChatInput({
   };
 
   return (
-    <footer className="sticky bottom-0 z-10 bg-slate-900">
+    <footer className="sticky bottom-0 z-10 bg-slate-900 pb-10">
       <form
         className="max-w-7xl mx-auto text-white py-3"
         onSubmit={(e) => e.preventDefault()}

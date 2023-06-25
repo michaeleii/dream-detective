@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.chat-container {
+  max-height: calc(100vh - 76px - 136px - 40px * 2);
+}
